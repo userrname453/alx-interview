@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-'''A module containing the Pascal's triangle function
+'''A module containing the Pascal's triangle function.
 '''
 
 
