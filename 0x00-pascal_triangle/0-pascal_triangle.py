@@ -23,5 +23,3 @@ def pascal_triangle(n):
         triangle[i].append(1)
 
     return(triangle)
-
-    
