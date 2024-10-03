@@ -9,10 +9,10 @@ def pascal_triangle(n):
         return triangle
     
     if n ==1:
-        return [1]
+        return [[1]]
     
     if n ==2:
-        return [1,1]
+        return [[1], [1, 1]]
     
     triangle = [[1], [1, 1]]
     
