@@ -2,14 +2,13 @@
 
 def canUnlockAll(boxes):
     n = len(boxes)
-    unlocked_boxes = set([0])
-    keys = [0]
-
-    while keys:
-        current_box = keys.pop()
-        for key in boxes[current_box]:
-            if key not in unlocked_boxes and key < n:
-                unlocked_boxes.add(key)
-                keys.append(key)
-
-    return len(unlocked_boxes) == n
+    discovered_boxes = set([0])
+    hidden_box = set(boxes[0]).difference(set([0]))
+    while len(hidden_box) > 0:
+        boxIdx = hidden_box.pop()
+        if not boxIdx or boxIdx >= n or boxIdx < 0:
+            continue
+        if boxIdx not in discovered_boxes:
+            hidden_box = hidden_box.union(boxes[boxIdx])
+            discovered_boxes.add(boxIdx)
+    return n == len(discovered_boxes)
