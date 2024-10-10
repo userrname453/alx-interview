@@ -1,14 +1,15 @@
+#!/usr/bin/python3
+
 def canUnlockAll(boxes):
     n = len(boxes)
-    unlocked_boxes = set([0])  # Start with the first box unlocked
-    keys = [0]  # Start with the keys from the first box
+    unlocked_boxes = set([0])
+    keys = [0]
 
     while keys:
-        current_box = keys.pop()  # Get the next box to process
+        current_box = keys.pop()
         for key in boxes[current_box]:
             if key not in unlocked_boxes and key < n:
                 unlocked_boxes.add(key)
-                keys.append(key)  # Add this new key to the stack
+                keys.append(key)
 
-    # Check if we have unlocked all boxes
     return len(unlocked_boxes) == n
