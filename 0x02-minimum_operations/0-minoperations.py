@@ -9,10 +9,10 @@ def minOperations(n):
     operations = 0
     i = 2
 
-    while i <= n: #2 is less than 10 #i =3 less than 10
-        while n % i == 0: #10%2 =0
-            operations += i # operations = 2
-            n //= i #n = 10//2 = 5
-        i += 1 #i = 3
+    while i <= n:
+        while n % i == 0:
+            operations += i
+            n //= i
+        i += 1
 
     return operations
